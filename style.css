@@ -1,0 +1,127 @@
+* {   /* RESET nas Config */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --ff-heading: 'Staatliches', cursive;
+    --ff-texting: 'Palanquin', sans-serif;
+    
+    --hue:250;
+    --bg-body:hsl(var(--hue), 100%, 97%);   /* Adicionando variáveis */
+    --bg-img:hsl(var(--hue), 91%, 96%);
+    --bg-h1:hsl(var(--hue), 18%, 79%);
+
+
+    --fc-p: hsl(var(--hue), 84%, 12%);
+    --fc-h1: hsl(var(--hue), 0%, 100%);
+    --fc-h2: hsla(var(--hue), 17%, 35%);
+    
+    font-size: 62.5%;  /* 10px */
+    --fs-body: 1.6rem;
+    --fs-p: 2rem;
+    --fs-h1: 4rem;
+    --fs-h2: 2rem;
+}
+body::before {
+    content: '';
+    width: 100%;
+    height: 38.4rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #8E9AAF;
+}
+body {
+    font-family: var(--ff-heading);
+    background-color: var(--bg-body);
+    font-size: var(--fs-body);
+}
+header {
+    text-align: center;
+    margin: auto;
+}
+header img {
+    margin: 7rem auto 4rem ; 
+
+}
+header h1 {
+    font-size: var(--fs-h1);
+    color: var(--fc-h1);
+
+    margin-bottom: 6.0rem;
+    line-height: 3rem;
+    background: var(--bg-h1);
+    padding: 2rem 8.5rem;
+    letter-spacing: 0.05em;
+    margin: 0 auto 5rem;
+    font-weight: 400;
+}
+.page {
+    max-width: 32rem;
+    margin: auto;
+}
+main p {
+    font-family: var(--ff-texting);
+    color: var(--fc-p);
+    font-size:var(--fs-p);
+    text-align: center;
+    line-height: 2rem;
+    margin: 7rem auto;
+    width: 30rem;
+    height: 7.5rem;
+    font-weight: 400;
+}
+.card img {
+    width: 100%;
+    margin-bottom: 3.2rem;
+    transition: transform 500ms; /* tempo que a imagem vai levar para crescer e diminuir */
+    
+    animation: downtop 1s ;
+}
+.card img:hover {
+    transform:scale(1.1); /* imagem crescendo e diminuindo */
+}
+.card {
+    position: relative; /* relative ao absolute do titulo */
+}
+.card h2 {
+    color: var(--fc-h2);
+    font-size: var(--fs-h2);
+    background: var(--bg-img);
+    
+    position: absolute; /* Para o titulo ficar por trás da imagem, porém ela tem que está absolute/relative a imagem*/
+    top: 1.7rem;
+    right: 2rem;
+    
+    padding: 0.5rem 2rem;
+    border-radius: 2.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    
+    animation: topdown 2s;
+    
+}
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
